@@ -3,4 +3,4 @@ ff.title("แอปพลิเคชั่นแปลงปี พ.ศ. เป
 
 bh_year=ff.number_input("กรอกปี พ.ศ. ที่ต้องการแปลง",value=2569)
 ce_year=bh_year-543
-ff.header("ปี ค.ศ. คือ : {ce_year}")
+ff.header(f"ปี ค.ศ. คือ : {ce_year}")
