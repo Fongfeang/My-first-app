@@ -28,7 +28,7 @@ def reset_game():
 # 📌 ฟังก์ชัน MessageBox (Dialog)
 # ----------------------------------------------------
 @st.dialog("📊 สรุปผลการเล่นเกม")
-def show_result_dialog(ans1, ans2, ans3, ans4):  # (จุดที่ 8: รับ Parameter เพิ่ม)
+def show_result_dialog(ans1, ans2, ans3, ans4):  # (จุดที่ 8)
     st.balloons()
     score = 0
 
@@ -51,15 +51,15 @@ def show_result_dialog(ans1, ans2, ans3, ans4):  # (จุดที่ 8: รั
     else:
         st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
 
-    # ตรวจข้อ 3 (จุดที่ 4)
+    # ตรวจข้อ 3 ('banana') (จุดที่ 4)
     if u_ans3 == "banana":
         st.success("✅ ข้อ 3: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
-    # ตรวจข้อ 4 (จุดที่ 4)
-    if u_ans4 == "dog":
+    # ตรวจข้อ 4 ('pen') (จุดที่ 4 - แก้ไขจาก dog เป็น pen)
+    if u_ans4 == "pen":
         st.success("✅ ข้อ 4: ถูกต้อง")
         score += 1
     else:
@@ -67,7 +67,7 @@ def show_result_dialog(ans1, ans2, ans3, ans4):  # (จุดที่ 8: รั
 
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
 
-    # (จุดที่ 5: ปรับเปลี่ยนเป็นคะแนนเต็ม 4)
+    # (จุดที่ 5: คะแนนเต็ม 4)
     if score == 4:
         st.success("🎉 You win!")
     else:
@@ -101,13 +101,14 @@ ans2 = st.text_input(
     value=st.session_state.ans2_val,
 )
 
-# (จุดที่ 6: เพิ่มช่องรับคำตอบข้อ 3 และ 4)
+# (จุดที่ 6: ช่องรับคำตอบข้อ 3 และ 4)
 ans3 = st.text_input(
     "ข้อ 3: Monkeys like to eat `b _ n _ n _`. 🍌",
     value=st.session_state.ans3_val,
 )
+# (จุดที่ 6 - แก้ไขคำถามข้อ 4)
 ans4 = st.text_input(
-    "ข้อ 4: A `d _ g` is man's best friend. 🐶",
+    "ข้อ 4: A `p _ n` is for writing. 🖊️",
     value=st.session_state.ans4_val,
 )
 
@@ -127,7 +128,7 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
     time.sleep(1)
     st.rerun()
 
-# 5. แสดง Dialog ผลลัพธ์ (จุดที่ 8: ส่งคำตอบ ans1 ถึง ans4 เข้าฟังก์ชัน)
+# 5. แสดง Dialog ผลลัพธ์ (จุดที่ 8)
 if st.session_state.get("is_ended", False):
     show_result_dialog(ans1, ans2, ans3, ans4)
 
