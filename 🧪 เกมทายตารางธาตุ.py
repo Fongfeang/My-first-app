@@ -286,7 +286,7 @@ if st.session_state.game_finished:
     elif score == 0:
 
         st.warning(
-            "พยายามอีกนิสนะน้อง💪🏻"
+            "ไม่เป็นไรนะ พยายามให้มากๆทำได้แน่นอน💪🏻"
         )
 
     
