@@ -280,13 +280,13 @@ if st.session_state.game_finished:
     elif score == 1:
 
         st.warning(
-            "สู้ๆละคนดีของพี่"
+            "สู้ๆล่ะคนดีของพี่"
         )
 
     elif score == 0:
 
         st.warning(
-            "ไม่เป็นไรนะ พยายามให้มากๆทำได้แน่นอน💪🏻"
+            "พยายามอีกนิสส์นะน้อง💪🏻"
         )
 
     
